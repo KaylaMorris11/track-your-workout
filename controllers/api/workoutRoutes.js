@@ -42,7 +42,15 @@ router.put("/:id", (req, res) => {
 });
 
 router.get("/range", (req, res) => {
-
-})
+  Workout.find({})
+  .sort({day: -1})
+    .limit(7)
+    .then((workoutData) => {
+      res.json(workoutData);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 
 module.exports = router;

@@ -39,7 +39,6 @@ const workoutSchema = new Schema({
 }
 );
 
-// workoutSchema.virtual('')
 
 const Workout = mongoose.model("Workout", workoutSchema);
 
